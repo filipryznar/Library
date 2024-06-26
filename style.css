@@ -1,0 +1,78 @@
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+
+  height: 100vh;
+  grid-template-rows: 1fr 6fr 1fr;
+}
+.header {
+  background-color: #a3a228;
+  color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.bookShelf {
+  background-color: #eabdac;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+.addBook {
+  display: flex;
+  background-color: #a3a228;
+  color: azure;
+  justify-self: flex-end;
+  align-self: center;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.footer {
+  background-color: #a3a228;
+}
+
+.books {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  align-content: flex-start;
+}
+.card {
+  display: grid;
+  grid-template-columns: 3% 1fr;
+  background-color: aqua;
+  border-radius: 0.5rem;
+  width: calc(33.333% - 2rem); /* Responsive width for 3 cards per row */
+  min-width: 250px; /* Minimum width for responsiveness */
+  max-width: 300px; /* Maximum width for responsiveness */
+  flex-basis: calc(33.333% - 2rem); /* Flex basis for responsiveness */
+  box-sizing: border-box;
+}
+.stripe {
+  grid-area: 1/1/2/2;
+  background-color: #f0b429;
+}
+.rest-of-card {
+  padding: 1.5rem;
+  display: grid;
+}
