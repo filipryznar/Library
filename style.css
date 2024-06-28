@@ -63,6 +63,16 @@ body {
   /* border: 1px solid black; */
   align-content: flex-start;
 }
+@keyframes implode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
 .card {
   display: grid;
   grid-template-columns: 8% 1fr;
@@ -77,6 +87,10 @@ body {
   min-height: 150px; /* Minimum height for responsiveness */
   max-height: 400px; /* Maximum height for responsiveness */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s; /* Smooth transition for box-shadow */
+}
+.card.imploding {
+  animation: implode 0.5s forwards; /* Apply the implode animation */
 }
 .card:hover {
   box-shadow: 0 5px 15px rgb(0 0 0 / 0.3); /* Adjust the box-shadow on hover */

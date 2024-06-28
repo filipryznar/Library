@@ -58,17 +58,22 @@ function displayBooks() {
     // Add event listeners for the buttons
     card
       .querySelector(".close button")
-      .addEventListener("click", () => removeBook(book.id));
+      .addEventListener("click", () => removeBook(card, book.id));
     card
       .querySelector(".change button")
       .addEventListener("click", () => toggleRead(book.id));
   });
 }
 // Function to remove a book by ID
-function removeBook(id) {
-  myLibrary = myLibrary.filter((book) => book.id !== id);
-  displayBooks();
+
+function removeBook(card, id) {
+  card.classList.add("imploding");
+  setTimeout(() => {
+    myLibrary = myLibrary.filter((book) => book.id !== id);
+    displayBooks();
+  }, 500); // Match the duration of the implode animation
 }
+
 // Function to toggle the read status of a book
 function toggleRead(id) {
   const book = myLibrary.find((book) => book.id === id);
