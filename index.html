@@ -12,21 +12,37 @@
         <h1>Library</h1>
       </div>
       <div class="bookShelf">
-        <div class="books">
-          <div class="card">
-            <div class="stripe"></div>
-            <div class="rest-of-card">
-              <div class="title">LOTR</div>
-              <div class="author">Tolkien</div>
-              <div class="pages"></div>
-              <div class="read"></div>
-            </div>
-          </div>
-        </div>
+        <div class="books"></div>
         <button class="addBook">Add Book</button>
       </div>
       <div class="footer"></div>
     </div>
+    <dialog id="dialog">
+      <form method="dialog">
+        <p>
+          <button id="cancel" formmethod="dialog">X</button>
+          <label class="required">
+            <span>Title:</span>
+            <input type="text" id="title" required />
+          </label>
+          <label class="required">
+            <span>Author:</span>
+            <input type="text" id="autor" required />
+          </label>
+          <label class="required">
+            <span>Pages:</span>
+            <input type="number" id="pages" required />
+          </label>
+          <label class="readContainer">
+            Read:
+            <input type="checkbox" id="read" />
+          </label>
+        </p>
+        <div>
+          <button id="confirmBtn" type="submit">Confirm</button>
+        </div>
+      </form>
+    </dialog>
   </body>
   <script src="script.js"></script>
 </html>
